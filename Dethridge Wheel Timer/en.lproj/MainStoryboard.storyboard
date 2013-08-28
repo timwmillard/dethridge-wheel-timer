@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHI-iE-JQX">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.13172072894142259" green="0.20087863628701452" blue="0.32772640306122447" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopTimer:" destination="2" eventType="touchDown" id="mz3-Of-kep"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="boV-Ah-LEL">
+                                <segments>
+                                    <segment title="Small"/>
+                                    <segment title="Large"/>
+                                    <segment title="Long"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeType:" destination="2" eventType="valueChanged" id="Ohc-Mt-cwb"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dethridge Wheel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhx-7K-dh6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" type="user" id="qTS-lN-1dJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
+                                <color key="textColor" red="0.1317207289" green="0.2008786363" blue="0.32772640310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="D23-En-Bgf">
+                                <string key="text">Tap anywhere to start/stop timer.
+Time one full wheel revolution. </string>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-9X-iDE">
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qx9-tc-d2G" kind="modal" modalTransitionStyle="flipHorizontal" id="tZY-4L-I0R"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcW-0b-I7E">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="80"/>
+                                <color key="textColor" red="0.094117656350135803" green="0.14901961386203766" blue="0.21960785984992981" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ML/d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7H-v2-IHs">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" red="0.094117656350135803" green="0.15686275064945221" blue="0.22745099663734436" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.0 sec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESn-xJ-eHD">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.55233353900000004" green="0.57864317600000004" blue="0.56914715589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="MXL-w6-o65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQ2-rR-D30">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" type="user" id="jp4-XT-RS8"/>
+                                    <constraint firstAttribute="height" constant="44" id="ntM-Kd-eHH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="2" eventType="touchUpInside" id="zRF-Iv-907"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="boV-Ah-LEL" secondAttribute="trailing" constant="3" type="user" id="4CU-Lf-fwV"/>
+                            <constraint firstItem="D23-En-Bgf" firstAttribute="centerY" secondItem="BFd-9X-iDE" secondAttribute="centerY" type="default" id="4Vf-0X-Il4"/>
+                            <constraint firstItem="ESn-xJ-eHD" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="4hY-WN-D5q"/>
+                            <constraint firstItem="D23-En-Bgf" firstAttribute="top" secondItem="MXL-w6-o65" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="6KK-aG-GWf"/>
+                            <constraint firstAttribute="centerX" secondItem="D23-En-Bgf" secondAttribute="centerX" type="user" id="8un-f6-J9h"/>
+                            <constraint firstItem="WHI-iE-JQX" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Bcx-xJ-4K3"/>
+                            <constraint firstAttribute="centerY" secondItem="hcW-0b-I7E" secondAttribute="centerY" type="user" id="Ia5-Km-Lyn"/>
+                            <constraint firstItem="WHI-iE-JQX" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="KVD-0M-a51"/>
+                            <constraint firstAttribute="trailing" secondItem="BFd-9X-iDE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LAM-SH-oNj"/>
+                            <constraint firstAttribute="centerX" secondItem="hcW-0b-I7E" secondAttribute="centerX" type="user" id="O3D-mu-LGT"/>
+                            <constraint firstItem="P7H-v2-IHs" firstAttribute="centerX" secondItem="MXL-w6-o65" secondAttribute="centerX" type="default" id="QIY-PS-uG1"/>
+                            <constraint firstItem="MXL-w6-o65" firstAttribute="top" secondItem="ESn-xJ-eHD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="YnJ-fe-wEy"/>
+                            <constraint firstItem="boV-Ah-LEL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3" secondAttribute="top" constant="3" type="user" id="aCk-gu-g5w"/>
+                            <constraint firstItem="WHI-iE-JQX" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="user" id="cHu-qR-hn8"/>
+                            <constraint firstItem="P7H-v2-IHs" firstAttribute="top" secondItem="hcW-0b-I7E" secondAttribute="bottom" constant="-15" type="user" id="dHh-QL-xhG"/>
+                            <constraint firstItem="MXL-w6-o65" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="eqp-2q-Fdw"/>
+                            <constraint firstAttribute="trailing" secondItem="MXL-w6-o65" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="fgC-Fo-ww3"/>
+                            <constraint firstAttribute="centerX" secondItem="Lhx-7K-dh6" secondAttribute="centerX" type="user" id="hbO-6n-zUc"/>
+                            <constraint firstItem="boV-Ah-LEL" firstAttribute="top" secondItem="3" secondAttribute="top" constant="3" type="user" id="hv8-bs-VT5"/>
+                            <constraint firstItem="D23-En-Bgf" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="l5h-JP-ZmM"/>
+                            <constraint firstAttribute="trailing" secondItem="VQ2-rR-D30" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="qns-sR-qvW"/>
+                            <constraint firstItem="Lhx-7K-dh6" firstAttribute="top" secondItem="boV-Ah-LEL" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="sza-iI-4mq"/>
+                            <constraint firstAttribute="bottom" secondItem="D23-En-Bgf" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="tPq-wN-Ghe"/>
+                            <constraint firstItem="VQ2-rR-D30" firstAttribute="centerY" secondItem="ESn-xJ-eHD" secondAttribute="centerY" type="default" id="wMw-di-2iu"/>
+                            <constraint firstItem="boV-Ah-LEL" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="3" type="user" id="yFR-QZ-8Nz"/>
+                            <constraint firstItem="WHI-iE-JQX" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="user" id="ypB-33-eXq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2cr-bi-z7a"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="flowRateLabel" destination="hcW-0b-I7E" id="GWa-9R-Xt9"/>
+                        <outlet property="timerLabel" destination="ESn-xJ-eHD" id="IRx-YA-ZHK"/>
+                        <outlet property="typeSegmentControl" destination="boV-Ah-LEL" id="xUa-0x-jGx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821" y="-89"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="riP-t9-RT3">
+            <objects>
+                <viewController id="Qx9-tc-d2G" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p6t-4m-oer">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEj-Kz-bd5">
+                                <items>
+                                    <navigationItem title="About" id="1q0-4c-QcG">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="XV8-Ux-vjv">
+                                            <connections>
+                                                <action selector="closeView:" destination="Qx9-tc-d2G" id="TdV-3a-J3z"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FG2-mk-K3v">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QEj-Kz-bd5" firstAttribute="top" secondItem="p6t-4m-oer" secondAttribute="top" type="default" id="0T2-G5-GEY"/>
+                            <constraint firstItem="FG2-mk-K3v" firstAttribute="top" secondItem="QEj-Kz-bd5" secondAttribute="bottom" type="default" id="6XY-XY-Jst"/>
+                            <constraint firstItem="FG2-mk-K3v" firstAttribute="trailing" secondItem="p6t-4m-oer" secondAttribute="trailing" type="default" id="Y3K-Xf-KhP"/>
+                            <constraint firstItem="QEj-Kz-bd5" firstAttribute="trailing" secondItem="p6t-4m-oer" secondAttribute="trailing" type="default" id="ZuJ-m9-18W"/>
+                            <constraint firstItem="FG2-mk-K3v" firstAttribute="leading" secondItem="p6t-4m-oer" secondAttribute="leading" type="default" id="h22-9L-SkU"/>
+                            <constraint firstItem="FG2-mk-K3v" firstAttribute="bottom" secondItem="p6t-4m-oer" secondAttribute="bottom" type="default" id="vTY-m6-3e9"/>
+                            <constraint firstItem="QEj-Kz-bd5" firstAttribute="leading" secondItem="p6t-4m-oer" secondAttribute="leading" type="default" id="zg2-WF-gR1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="FG2-mk-K3v" id="uIG-hu-qeJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jxg-Aw-wCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357" y="-103"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bar.png" width="288" height="5"/>
+    </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeView:"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeType:"/>
+                <relationship kind="action" name="reset:"/>
+                <relationship kind="action" name="startStopTimer:"/>
+                <relationship kind="outlet" name="flowRateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="typeSegmentControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
