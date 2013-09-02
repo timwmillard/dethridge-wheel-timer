@@ -60,7 +60,7 @@
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
     NSTimeInterval elapsed = currentTime - startTime;
     
-    if (elapsed >= 120) {
+    if (elapsed >= 120.0) {
         [self timeout];
         return;
     }
