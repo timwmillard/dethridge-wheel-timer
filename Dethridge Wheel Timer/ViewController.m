@@ -128,8 +128,7 @@
 
 - (void)timeout
 {
-    running = NO;
-    self.flowRateLabel.text = @"";
+    [self reset:self];
     self.unitsLabel.text = @"Timed Out";
 }
 
