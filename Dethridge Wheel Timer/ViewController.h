@@ -14,9 +14,10 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *flowRateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *unitsLabel;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *typeSegmentControl;
 
-@property (strong, nonatomic) DethridgeWheel *DethridgeWheel;
+@property (strong, nonatomic) DethridgeWheel *dethridgeWheel;
 
 - (IBAction)startStopTimer:(id)sender;
 - (IBAction)changeType:(id)sender;

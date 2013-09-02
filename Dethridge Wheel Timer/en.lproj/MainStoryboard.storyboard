@@ -133,6 +133,7 @@ Time one full wheel revolution. </string>
                         <outlet property="flowRateLabel" destination="hcW-0b-I7E" id="GWa-9R-Xt9"/>
                         <outlet property="timerLabel" destination="ESn-xJ-eHD" id="IRx-YA-ZHK"/>
                         <outlet property="typeSegmentControl" destination="boV-Ah-LEL" id="xUa-0x-jGx"/>
+                        <outlet property="unitsLabel" destination="P7H-v2-IHs" id="yAj-wa-Lvp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -206,6 +207,7 @@ Time one full wheel revolution. </string>
                 <relationship kind="outlet" name="flowRateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="typeSegmentControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="unitsLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

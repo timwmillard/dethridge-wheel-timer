@@ -18,8 +18,7 @@
     NSTimeInterval startTime;
 }
 
-@synthesize DethridgeWheel = _DethridgeWheel;
-
+@synthesize dethridgeWheel = _dethridgeWheel;
 
 - (void)viewDidLoad
 {
@@ -43,6 +42,7 @@
         // Start Timer
         running = YES;
         self.flowRateLabel.text = @"";
+        self.unitsLabel.text = @"";
         startTime = [NSDate timeIntervalSinceReferenceDate];
         [self updateTime];
     } else {
@@ -60,7 +60,12 @@
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
     NSTimeInterval elapsed = currentTime - startTime;
     
-    self.DethridgeWheel.timePerRevolution = [NSNumber numberWithDouble:elapsed];
+    if (elapsed >= 120) {
+        [self timeout];
+        return;
+    }
+    
+    self.dethridgeWheel.timePerRevolution = [NSNumber numberWithDouble:elapsed];
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -76,10 +81,15 @@
 {
     if (running == YES) return;
     
-    if (self.DethridgeWheel.timePerRevolution.doubleValue == 0.0) return;
+    if (self.dethridgeWheel.timePerRevolution.doubleValue == 0.0) return;
+    
+    if (self.dethridgeWheel.timePerRevolution.doubleValue < 1.0) {
+        [self outOfRange];
+        return;
+    }
     
     int fractionDigits;
-    if (self.DethridgeWheel.flowRate.doubleValue>=100)
+    if (self.dethridgeWheel.flowRate.doubleValue>=100)
         fractionDigits = 0;
     else
         fractionDigits = 1;
@@ -88,18 +98,19 @@
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
     formatter.minimumFractionDigits = fractionDigits;
     formatter.maximumFractionDigits = fractionDigits;
-    self.flowRateLabel.text = [formatter stringFromNumber:self.DethridgeWheel.flowRate];
+    self.flowRateLabel.text = [formatter stringFromNumber:self.dethridgeWheel.flowRate];
+    self.unitsLabel.text = @"ML/d";
     
 }
 
 - (IBAction)changeType:(id)sender
 {
     switch (self.typeSegmentControl.selectedSegmentIndex ) {
-        case 0: self.DethridgeWheel.type = SmallWheel;
+        case 0: self.dethridgeWheel.type = SmallWheel;
             break;
-        case 1: self.DethridgeWheel.type = LargeWheel;
+        case 1: self.dethridgeWheel.type = LargeWheel;
             break;
-        case 2: self.DethridgeWheel.type = LongWheel;
+        case 2: self.dethridgeWheel.type = LongWheel;
             break;
     }
     [self updateFlowRate];
@@ -107,9 +118,26 @@
 
 - (IBAction)reset:(id)sender
 {
+    self.dethridgeWheel.timePerRevolution = nil;
+    
     self.timerLabel.text = @"0.0 sec";
     self.flowRateLabel.text = @"";
+    self.unitsLabel.text = @"";
     running = NO;
+}
+
+- (void)timeout
+{
+    running = NO;
+    self.flowRateLabel.text = @"";
+    self.unitsLabel.text = @"Timed Out";
+}
+
+- (void)outOfRange
+{
+    running = NO;
+    self.flowRateLabel.text = @"";
+    self.unitsLabel.text = @"Out Of Range";
 }
 
 @end

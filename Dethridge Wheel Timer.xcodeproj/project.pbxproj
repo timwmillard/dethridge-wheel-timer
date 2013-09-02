@@ -134,7 +134,6 @@
 				221CABE0178A38C400049B8A /* DethridgeWheel.m */,
 				221CABC3178A284800049B8A /* Supporting Files */,
 			);
-			name = "Dethridge Wheel Timer";
 			path = "Dethridge Wheel Timer";
 			sourceTree = "<group>";
 		};
